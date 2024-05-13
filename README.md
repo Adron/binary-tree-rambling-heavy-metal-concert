@@ -1,1 +1,6 @@
-# binary-tree-rambling-heavy-metal-concert
+# Binary Tree Rambling Heavy Metal Concert
+
+This code goes along with...
+
+Blog Post: 
+Video: 
