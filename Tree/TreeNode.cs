@@ -3,9 +3,9 @@ namespace Tree;
 public class TreeNode
 {
     public int value;
-    public TreeNode? left, right; // Make left and right nullable
+    public TreeNode left, right;
 
-    public TreeNode(int value, TreeNode? left = null, TreeNode? right = null) // Allow nulls
+    public TreeNode(int value, TreeNode left = null, TreeNode right = null)
     {
         this.value = value;
         this.left = left;
@@ -30,7 +30,7 @@ public class TreeNode
         return this;
     }
 
-    public static TreeNode Join(int value, TreeNode? left, TreeNode? right) // Allow nulls
+    public static TreeNode Join(int value, TreeNode left, TreeNode right)
     {
         return new TreeNode(value, left, right);
     }

@@ -1,32 +1,20 @@
 ﻿namespace Tree;
 
-
-
 public static class Climber
 {
     public static int MaxSum(TreeNode root)
     {
-        if (root == null) return 0;
-
-        int maxSum = int.MinValue;
-        FindMaxSum(root, 0, ref maxSum);
-        return maxSum;  
+        return root == null ? 0 : FindMaxSum(root);
     }
 
-    private static void FindMaxSum(TreeNode? node, int currentSum, ref int maxSum) // Allow null node
+    private static int FindMaxSum(TreeNode? node)
     {
-        if (node == null) return;
+        if (node == null) return 0;
+        if (node.left == null && node.right == null) return node.value;
 
-        currentSum += node.value; 
-        if (node.left == null && node.right == null)
-        {
-            if (currentSum > maxSum)
-            {
-                maxSum = currentSum; 
-            }
-        }
+        int leftMaxSum = node.left != null ? FindMaxSum(node.left) : int.MinValue;
+        int rightMaxSum = node.right != null ? FindMaxSum(node.right) : int.MinValue;
 
-        FindMaxSum(node.left, currentSum, ref maxSum);
-        FindMaxSum(node.right, currentSum, ref maxSum);
+        return node.value + Math.Max(leftMaxSum, rightMaxSum);
     }
 }
