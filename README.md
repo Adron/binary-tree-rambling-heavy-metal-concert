@@ -1,4 +1,4 @@
-# Binary Tree Rambling Heavy Metal Concert
+# Binary Tree Max Path
 
 This code goes along with...
 
