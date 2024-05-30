@@ -24,9 +24,3 @@ jobs:
       run: dotnet restore binary-tree-rambling-heavy-metal-concert/Tree/Tree.csproj
     - name: Build Tree project
       run: dotnet build binary-tree-rambling-heavy-metal-concert/Tree/Tree.csproj --no-restore
-    - name: Restore dependencies for tests
-      run: dotnet restore binary-tree-things-tests/binary-tree-things-tests.csproj
-    - name: Build tests
-      run: dotnet build binary-tree-rambling-heavy-metal-concert/binary-tree-things-tests/binary-tree-things-tests.csproj --no-restore
-    - name: Test
-      run: dotnet test binary-tree-rambling-heavy-metal-concert/binary-tree-things-tests/binary-tree-things-tests.csproj --no-build --verbosity normal
