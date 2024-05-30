@@ -21,6 +21,6 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies for Tree project
-      run: dotnet restore binary-tree-rambling-heavy-metal-concert/Tree/Tree.csproj
+      run: dotnet restore Tree/Tree.csproj
     - name: Build Tree project
-      run: dotnet build binary-tree-rambling-heavy-metal-concert/Tree/Tree.csproj --no-restore
+      run: dotnet build Tree/Tree.csproj --no-restore
