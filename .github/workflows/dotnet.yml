@@ -25,7 +25,7 @@ jobs:
     - name: Build Tree project
       run: dotnet build Tree/Tree.csproj --no-restore
     - name: Restore dependencies for tests
-      run: dotnet restore binary-tree-things-tests.csproj
+      run: dotnet restore binary-tree-things-tests/binary-tree-things-tests.csproj
     - name: Build tests
       run: dotnet build binary-tree-things-tests/binary-tree-things-tests.csproj --no-restore
     - name: Test
