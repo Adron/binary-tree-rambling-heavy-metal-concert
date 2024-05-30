@@ -21,8 +21,12 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
+      run: dotnet restore Tree/tree.csproj
+    - name: Build Tree project
+      run: dotnet build Tree/tree.csproj --no-restore
+    - name: Restore dependencies for tests
+      run: dotnet restore binary-tree-things-tests/binary-tree-things-tests.csproj
+    - name: Build tests
+      run: dotnet build binary-tree-things-tests/binary-tree-things-tests.csproj --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test binary-tree-things-tests/binary-tree-things-tests.csproj --no-build --verbosity normal
